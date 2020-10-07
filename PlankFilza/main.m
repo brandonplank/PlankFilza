@@ -179,6 +179,7 @@ int start() {
     } else {
         if(SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(@"13.3")){
             task_port_k = run_time_waste();
+            init_kernel_memory(task_port_k);
         } else {
             tardy0n();
             task_port_k = getTaskPort();
@@ -261,7 +262,7 @@ BOOL error = false;
     }
     if(error || [notice_json  isEqual: @""]){
         Log(log_error, "Failed to get msg...\n");
-        notice_json = @"Plank Filza by Brandon Plank(@_bplank)\n\nCoryright 2020 Brandon Plank";
+        message = @"Plank Filza by Brandon Plank(@_bplank)\n\nCoryright 2020 Brandon Plank";
     }
     if(can_show_msg){
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
