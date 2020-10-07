@@ -127,16 +127,30 @@ bool unsandbox(){
     return true;
 }
 
-void error_popup(NSString *messgae_popup){
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"Error" message:messgae_popup preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:NULL]];
-        UIViewController * controller = [UIApplication sharedApplication].keyWindow.rootViewController;
-        while (controller.presentedViewController) {
-            controller = controller.presentedViewController;
-        }
-        [controller presentViewController:alertController animated:YES completion:NULL];
-    });
+void error_popup(NSString *messgae_popup, BOOL fatal){
+    if(fatal){
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"Fatal Error" message:messgae_popup preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Exit" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+                exit(0);
+            }]];
+            UIViewController * controller = [UIApplication sharedApplication].keyWindow.rootViewController;
+            while (controller.presentedViewController) {
+                controller = controller.presentedViewController;
+            }
+            [controller presentViewController:alertController animated:YES completion:NULL];
+        });
+    } else {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"Error" message:messgae_popup preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:NULL]];
+            UIViewController * controller = [UIApplication sharedApplication].keyWindow.rootViewController;
+            while (controller.presentedViewController) {
+                controller = controller.presentedViewController;
+            }
+            [controller presentViewController:alertController animated:YES completion:NULL];
+        });
+    }
 }
 
 int start() {
@@ -144,6 +158,7 @@ int start() {
     Log(log_info, "==Plank Filza==");
     if(SYSTEM_VERSION_LESS_THAN(@"12.0") || SYSTEM_VERSION_GREATER_THAN(@"13.5")){
         Log(log_error, "Incorrect version");
+        error_popup(@"Unsupported iOS version", true);
     } else {
         if(SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(@"13.3")){
             task_port_k = run_time_waste();
@@ -162,15 +177,15 @@ int start() {
                     Log(log_info, "UID after rootify: %d", getuid());
                 } else {
                     Log(log_error, "Failed to gain root!");
-                    error_popup(@"Failed to gain root.");
+                    error_popup(@"Failed to gain root.", false);
                 }
             } else {
                 Log(log_error, "Failed to unsandbox!");
-                error_popup(@"Failed to unsandbox.");
+                error_popup(@"Failed to unsandbox.", true);
             }
         } else {
             Log(log_error, "Failed to get the kernel task port");
-            error_popup(@"Failed to get tfp0.");
+            error_popup(@"Failed to get tfp0.", true);
         }
     }
     return 0;
