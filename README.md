@@ -5,6 +5,8 @@ This is pretty much Filza, the File Manager from Cydia. Escapes the sandbox and 
 
 R/W to /var/ and /tmp and it can read from anywhere. Enjoy
 
+Remount for iOS 13 only coming soon.
+
 ### Me:
 <ul>
 <li>Brandon Plank on Twitter: <a href="https://twitter.com/_bplank">@_bplank</a></li>
