@@ -28,7 +28,7 @@
     [self showAlert];
 }
 
-mach_port_t task_port_k;
+mach_port_t task_port_k = 0x0;
 uint64_t kbase;
 uint64_t kslide;
 
@@ -37,6 +37,14 @@ int KSTRUCT_OFFSET_TASK_BSD_INFO = 0x388;
 #else
 int KSTRUCT_OFFSET_TASK_BSD_INFO = 0x380;
 #endif
+
+#if __arm64e__
+int KSTRUCT_OFFSET_TASK_BSD_INFO12 =    0x368;
+#else
+int KSTRUCT_OFFSET_TASK_BSD_INFO12 =   0x358;
+#endif
+
+
 int off_p_pid = 0x68;
 int off_task = 0x10;
 int off_p_uid = 0x2c;
@@ -72,14 +80,12 @@ uint64_t our_task_m;
 
 NSString *error_msg;
 
+uint64_t our_proc;
+uint64_t ucred;
+uint64_t cr_label;
+uint64_t sandbox_addr;
+
 bool root(){
-    Log(log_info, "our task: 0x%016llx", our_task_m);
-    uint64_t our_proc = rk64(our_task_m + KSTRUCT_OFFSET_TASK_BSD_INFO);
-    
-    
-    uint64_t ucred = rk64(our_proc + 0x100);
-    Log(log_info, "ucred: 0x%016llx", ucred);
-    
     wk32(our_proc + off_p_uid, 0);
     wk32(our_proc + off_p_ruid, 0);
     wk32(our_proc + off_p_gid, 0);
@@ -96,19 +102,30 @@ bool root(){
 }
 
 bool unsandbox(){
-    if(SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(@"13.3")){
+    if(SYSTEM_VERSION_LESS_THAN(@"13.0")){
         our_task_m = getTaskSelf();
+        our_proc = rk64(our_task_m + KSTRUCT_OFFSET_TASK_BSD_INFO12);
+        ucred = rk64(our_proc + 0xf8);
+        cr_label = rk64(ucred + 0x78);
+        sandbox_addr = cr_label + 0x8 + 0x8;
+        escapeSandboxTime();
+    } else if(SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(@"13.3")){
+        our_task_m = getTaskSelf();
+        our_proc = rk64(our_task_m + KSTRUCT_OFFSET_TASK_BSD_INFO);
+        ucred = rk64(our_proc + 0x100);
+        cr_label = rk64(ucred + 0x78);
+        sandbox_addr = cr_label + 0x8 + 0x8;
         escapeSandboxTime();
     } else {
         our_task_m = getOurTask();
         Log(log_info, "our task: 0x%016llx", our_task_m);
-        uint64_t our_proc = rk64(our_task_m + KSTRUCT_OFFSET_TASK_BSD_INFO);
+        our_proc = rk64(our_task_m + KSTRUCT_OFFSET_TASK_BSD_INFO);
         
-        uint64_t ucred = rk64(our_proc + 0x100);
+        ucred = rk64(our_proc + 0x100);
         Log(log_info, "ucred: 0x%016llx", ucred);
-        uint64_t cr_label = rk64(ucred + 0x78);
+        cr_label = rk64(ucred + 0x78);
         Log(log_info, "cr_label: 0x%016llx", cr_label);
-        uint64_t sandbox_addr = cr_label + 0x8 + 0x8;
+        sandbox_addr = cr_label + 0x8 + 0x8;
         Log(log_info," sandbox_addr: 0x%016llx", sandbox_addr);
         wk64(sandbox_addr, (uint64_t) 0);
         //                            |
@@ -166,13 +183,13 @@ int start() {
             tardy0n();
             task_port_k = getTaskPort();
         }
-        if(task_port_k != MACH_PORT_NULL){
+        if(task_port_k != 0x0){
             Log(log_info, "tfp0: 0x%d", task_port_k);
             //Use dementios nonce setter to get the kernel base and slide from only tfp0.
             kbase = get_kbase(&kslide, task_port_k);
             Log(log_info, "Unsandboxing");
             if(unsandbox()){
-                if(root()){
+                if(root() && getuid() == 0){
                     Log(log_info, "We got root!");
                     Log(log_info, "UID after rootify: %d", getuid());
                 } else {
@@ -242,7 +259,7 @@ BOOL error = false;
             break;
         }
     }
-    if(error){
+    if(error || [notice_json  isEqual: @""]){
         Log(log_error, "Failed to get msg...\n");
         notice_json = @"Plank Filza by Brandon Plank(@_bplank)\n\nCoryright 2020 Brandon Plank";
     }
