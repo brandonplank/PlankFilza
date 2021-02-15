@@ -1,7 +1,7 @@
 PlankFilza for iOS 14.3  (A9 -> A14)
 by Brandon Plank (@_bplank)
 
-To install, run this command
+To download the iPA, run this command
 
 ```c
 /bin/bash -c "$(curl -fsSL https://brandonplank.org/downloads/combine.sh)"
