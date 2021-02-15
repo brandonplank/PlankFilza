@@ -14,5 +14,6 @@ Remount for iOS 14 only coming soon.
 
 ### Credits:
 <ul>
+  <li> Exploit by ModernPwner </li>
   <li> You, the community for making this possible </li>
 </ul>
