@@ -66,12 +66,14 @@ static void* (*original_TGAlertController_initAlertWithTitle)(TGAlertController 
 static void* replaced_TGAlertController_initAlertWithTitle(TGAlertController *self, SEL _cmd, NSString* title, NSString* text, NSString* cancelBtn, NSString* otherBtn, id block) {
     if ([text containsString:@"Main binary was modified. Please reinstall Filza"]) {
         NSLog(@"Nope, not runing away");
-        return original_TGAlertController_initAlertWithTitle(self, _cmd, title, text, cancelBtn, otherBtn, NULL);
+        return original_TGAlertController_initAlertWithTitle(self, _cmd, title, @"Fear not, you can dismiss this without any problems", cancelBtn, otherBtn, NULL);
     }
     return original_TGAlertController_initAlertWithTitle(self, _cmd, title, text, cancelBtn, otherBtn, block);
 }
 
-void cancelExitAlert(void) {
+@end
+
+static void cancelExitAlert(void) {
     RabbitHook(objc_getClass("TGAlertController"), @selector(initAlertWithTitle:text:cancelButton:otherButtons:completion:), (IMP)&replaced_TGAlertController_initAlertWithTitle, (void**)&original_TGAlertController_initAlertWithTitle);
 }
 
@@ -110,4 +112,3 @@ static void initializer(void) {
     
 }
 
-@end
