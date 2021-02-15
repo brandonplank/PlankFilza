@@ -80,7 +80,7 @@ static void cancelExitAlert(void) {
 int start() {
     //Start exploitation to gain tfp0.
     Log(log_info, "==Plank Filza==");
-    if(SYSTEM_VERSION_LESS_THAN(@"14.0") || SYSTEM_VERSION_GREATER_THAN(@"14.3")){
+    if(SYSTEM_VERSION_LESS_THAN(@"13.0") || SYSTEM_VERSION_GREATER_THAN(@"14.3")){
         Log(log_error, "Incorrect version");
         error_popup(@"Unsupported iOS version", true);
     } else {
