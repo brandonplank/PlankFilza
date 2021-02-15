@@ -1,6 +1,0 @@
-framework module time_frame {
-  umbrella header "time_frame.h"
-
-  export *
-  module * { export * }
-}

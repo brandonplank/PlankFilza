@@ -3,45 +3,57 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		880773D02526ADCC00CFD45B /* support.m in Sources */ = {isa = PBXBuildFile; fileRef = 880773CE2526ADCC00CFD45B /* support.m */; };
 		880773D12526ADCC00CFD45B /* support.h in Headers */ = {isa = PBXBuildFile; fileRef = 880773CF2526ADCC00CFD45B /* support.h */; };
-		88ECD7442527B2490046CD7A /* helpers.c in Sources */ = {isa = PBXBuildFile; fileRef = 88ECD73E2527B2490046CD7A /* helpers.c */; };
-		88ECD7452527B2490046CD7A /* helpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 88ECD73F2527B2490046CD7A /* helpers.h */; };
-		88ECD7462527B2490046CD7A /* kmem.c in Sources */ = {isa = PBXBuildFile; fileRef = 88ECD7402527B2490046CD7A /* kmem.c */; };
-		88ECD7472527B2490046CD7A /* kmem.h in Headers */ = {isa = PBXBuildFile; fileRef = 88ECD7412527B2490046CD7A /* kmem.h */; };
-		88ECD7482527B2490046CD7A /* tardy0n.cc in Sources */ = {isa = PBXBuildFile; fileRef = 88ECD7422527B2490046CD7A /* tardy0n.cc */; };
-		88ECD7492527B2490046CD7A /* tardy0n.h in Headers */ = {isa = PBXBuildFile; fileRef = 88ECD7432527B2490046CD7A /* tardy0n.h */; };
-		88ECD74C2527C55C0046CD7A /* Kernel_Base.h in Headers */ = {isa = PBXBuildFile; fileRef = 88ECD74A2527C55C0046CD7A /* Kernel_Base.h */; };
-		88ECD74D2527C55C0046CD7A /* Kernel_Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ECD74B2527C55C0046CD7A /* Kernel_Base.m */; };
+		8861FC1F25D9F29D002CABA5 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8861FC1125D9F29D002CABA5 /* LICENSE */; };
+		8861FC2025D9F29D002CABA5 /* cicuta_log.c in Sources */ = {isa = PBXBuildFile; fileRef = 8861FC1225D9F29D002CABA5 /* cicuta_log.c */; };
+		8861FC2125D9F29D002CABA5 /* fake_element_spray.c in Sources */ = {isa = PBXBuildFile; fileRef = 8861FC1325D9F29D002CABA5 /* fake_element_spray.c */; };
+		8861FC2225D9F29D002CABA5 /* descriptors_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 8861FC1425D9F29D002CABA5 /* descriptors_utils.c */; };
+		8861FC2325D9F29D002CABA5 /* exploit_utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 8861FC1525D9F29D002CABA5 /* exploit_utilities.h */; };
+		8861FC2425D9F29D002CABA5 /* cicuta_virosa.c in Sources */ = {isa = PBXBuildFile; fileRef = 8861FC1625D9F29D002CABA5 /* cicuta_virosa.c */; };
+		8861FC2525D9F29D002CABA5 /* voucher_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 8861FC1725D9F29D002CABA5 /* voucher_utils.c */; };
+		8861FC2625D9F29D002CABA5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8861FC1825D9F29D002CABA5 /* README.md */; };
+		8861FC2725D9F29D002CABA5 /* cicuta_log.h in Headers */ = {isa = PBXBuildFile; fileRef = 8861FC1925D9F29D002CABA5 /* cicuta_log.h */; };
+		8861FC2825D9F29D002CABA5 /* fake_element_spray.h in Headers */ = {isa = PBXBuildFile; fileRef = 8861FC1A25D9F29D002CABA5 /* fake_element_spray.h */; };
+		8861FC2925D9F29D002CABA5 /* voucher_utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 8861FC1B25D9F29D002CABA5 /* voucher_utils.h */; };
+		8861FC2A25D9F29D002CABA5 /* exploit_utilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 8861FC1C25D9F29D002CABA5 /* exploit_utilities.c */; };
+		8861FC2B25D9F29D002CABA5 /* cicuta_virosa.h in Headers */ = {isa = PBXBuildFile; fileRef = 8861FC1D25D9F29D002CABA5 /* cicuta_virosa.h */; };
+		8861FC2C25D9F29D002CABA5 /* descriptors_utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 8861FC1E25D9F29D002CABA5 /* descriptors_utils.h */; };
+		8861FC3125D9F2B4002CABA5 /* rootless.h in Headers */ = {isa = PBXBuildFile; fileRef = 8861FC2F25D9F2B4002CABA5 /* rootless.h */; };
+		8861FC3225D9F2B4002CABA5 /* rootless.m in Sources */ = {isa = PBXBuildFile; fileRef = 8861FC3025D9F2B4002CABA5 /* rootless.m */; };
 		88ED0133252BE802000A43ED /* BypassAntiDebugging.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED0127252BE802000A43ED /* BypassAntiDebugging.m */; };
 		88ED0135252BE802000A43ED /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 88ED012B252BE802000A43ED /* fishhook.c */; };
 		88ED0136252BE802000A43ED /* fishhook.h in Headers */ = {isa = PBXBuildFile; fileRef = 88ED012C252BE802000A43ED /* fishhook.h */; };
-		88ED0137252BE802000A43ED /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 88ED012D252BE802000A43ED /* LICENSE */; };
 		88ED0138252BE802000A43ED /* BypassAntiDebugging.h in Headers */ = {isa = PBXBuildFile; fileRef = 88ED012E252BE802000A43ED /* BypassAntiDebugging.h */; };
-		88ED013D252D4334000A43ED /* time_frame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88ECD7602527EDA90046CD7A /* time_frame.framework */; platformFilter = ios; };
 		D6DEAD4922DBF20B005948BF /* pwner.h in Headers */ = {isa = PBXBuildFile; fileRef = D6DEAD4722DBF20B005948BF /* pwner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D6DEAD7022DBF224005948BF /* mach_vm.h in Headers */ = {isa = PBXBuildFile; fileRef = D6DEAD4F22DBF220005948BF /* mach_vm.h */; };
 		D6DEAD8022DBF224005948BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D6DEAD5F22DBF222005948BF /* main.m */; };
-		D6DEAD9322DBF28A005948BF /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DEAD9222DBF28A005948BF /* IOKit.framework */; };
 		D6DEAD9E22DBF5FA005948BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DEAD9D22DBF5FA005948BF /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		880773CE2526ADCC00CFD45B /* support.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = support.m; sourceTree = "<group>"; };
 		880773CF2526ADCC00CFD45B /* support.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = support.h; sourceTree = "<group>"; };
-		88ECD73E2527B2490046CD7A /* helpers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = helpers.c; sourceTree = "<group>"; };
-		88ECD73F2527B2490046CD7A /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
-		88ECD7402527B2490046CD7A /* kmem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kmem.c; sourceTree = "<group>"; };
-		88ECD7412527B2490046CD7A /* kmem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kmem.h; sourceTree = "<group>"; };
-		88ECD7422527B2490046CD7A /* tardy0n.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tardy0n.cc; sourceTree = "<group>"; };
-		88ECD7432527B2490046CD7A /* tardy0n.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tardy0n.h; sourceTree = "<group>"; };
-		88ECD74A2527C55C0046CD7A /* Kernel_Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kernel_Base.h; sourceTree = "<group>"; };
-		88ECD74B2527C55C0046CD7A /* Kernel_Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kernel_Base.m; sourceTree = "<group>"; };
-		88ECD7602527EDA90046CD7A /* time_frame.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = time_frame.framework; sourceTree = "<group>"; };
+		8861FC1125D9F29D002CABA5 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8861FC1225D9F29D002CABA5 /* cicuta_log.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cicuta_log.c; sourceTree = "<group>"; };
+		8861FC1325D9F29D002CABA5 /* fake_element_spray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fake_element_spray.c; sourceTree = "<group>"; };
+		8861FC1425D9F29D002CABA5 /* descriptors_utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = descriptors_utils.c; sourceTree = "<group>"; };
+		8861FC1525D9F29D002CABA5 /* exploit_utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exploit_utilities.h; sourceTree = "<group>"; };
+		8861FC1625D9F29D002CABA5 /* cicuta_virosa.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cicuta_virosa.c; sourceTree = "<group>"; };
+		8861FC1725D9F29D002CABA5 /* voucher_utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = voucher_utils.c; sourceTree = "<group>"; };
+		8861FC1825D9F29D002CABA5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8861FC1925D9F29D002CABA5 /* cicuta_log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cicuta_log.h; sourceTree = "<group>"; };
+		8861FC1A25D9F29D002CABA5 /* fake_element_spray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fake_element_spray.h; sourceTree = "<group>"; };
+		8861FC1B25D9F29D002CABA5 /* voucher_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = voucher_utils.h; sourceTree = "<group>"; };
+		8861FC1C25D9F29D002CABA5 /* exploit_utilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = exploit_utilities.c; sourceTree = "<group>"; };
+		8861FC1D25D9F29D002CABA5 /* cicuta_virosa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cicuta_virosa.h; sourceTree = "<group>"; };
+		8861FC1E25D9F29D002CABA5 /* descriptors_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = descriptors_utils.h; sourceTree = "<group>"; };
+		8861FC2F25D9F2B4002CABA5 /* rootless.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rootless.h; sourceTree = "<group>"; };
+		8861FC3025D9F2B4002CABA5 /* rootless.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rootless.m; sourceTree = "<group>"; };
 		88ED0127252BE802000A43ED /* BypassAntiDebugging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BypassAntiDebugging.m; sourceTree = "<group>"; };
 		88ED012B252BE802000A43ED /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
 		88ED012C252BE802000A43ED /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
@@ -52,7 +64,6 @@
 		D6DEAD4822DBF20B005948BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6DEAD4F22DBF220005948BF /* mach_vm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mach_vm.h; sourceTree = "<group>"; };
 		D6DEAD5F22DBF222005948BF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D6DEAD9222DBF28A005948BF /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = "../../ToolChain/Reverse Engineering Targets/IOKit.framework"; sourceTree = "<group>"; };
 		D6DEAD9C22DBF559005948BF /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 		D6DEAD9D22DBF5FA005948BF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -63,25 +74,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6DEAD9E22DBF5FA005948BF /* UIKit.framework in Frameworks */,
-				88ED013D252D4334000A43ED /* time_frame.framework in Frameworks */,
-				D6DEAD9322DBF28A005948BF /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		88ECD73D2527B2490046CD7A /* tardy0n */ = {
+		8861FC1025D9F29D002CABA5 /* exploit */ = {
 			isa = PBXGroup;
 			children = (
-				88ECD73E2527B2490046CD7A /* helpers.c */,
-				88ECD73F2527B2490046CD7A /* helpers.h */,
-				88ECD7402527B2490046CD7A /* kmem.c */,
-				88ECD7412527B2490046CD7A /* kmem.h */,
-				88ECD7422527B2490046CD7A /* tardy0n.cc */,
-				88ECD7432527B2490046CD7A /* tardy0n.h */,
+				8861FC1125D9F29D002CABA5 /* LICENSE */,
+				8861FC1225D9F29D002CABA5 /* cicuta_log.c */,
+				8861FC1325D9F29D002CABA5 /* fake_element_spray.c */,
+				8861FC1425D9F29D002CABA5 /* descriptors_utils.c */,
+				8861FC1525D9F29D002CABA5 /* exploit_utilities.h */,
+				8861FC1625D9F29D002CABA5 /* cicuta_virosa.c */,
+				8861FC1725D9F29D002CABA5 /* voucher_utils.c */,
+				8861FC1825D9F29D002CABA5 /* README.md */,
+				8861FC1925D9F29D002CABA5 /* cicuta_log.h */,
+				8861FC1A25D9F29D002CABA5 /* fake_element_spray.h */,
+				8861FC1B25D9F29D002CABA5 /* voucher_utils.h */,
+				8861FC1C25D9F29D002CABA5 /* exploit_utilities.c */,
+				8861FC1D25D9F29D002CABA5 /* cicuta_virosa.h */,
+				8861FC1E25D9F29D002CABA5 /* descriptors_utils.h */,
 			);
-			path = tardy0n;
+			path = exploit;
+			sourceTree = "<group>";
+		};
+		8861FC2E25D9F2B4002CABA5 /* postexploit */ = {
+			isa = PBXGroup;
+			children = (
+				8861FC2F25D9F2B4002CABA5 /* rootless.h */,
+				8861FC3025D9F2B4002CABA5 /* rootless.m */,
+			);
+			path = postexploit;
 			sourceTree = "<group>";
 		};
 		88ED0126252BE7F0000A43ED /* PatchDebugging */ = {
@@ -132,9 +158,9 @@
 		D6DEAD4622DBF20B005948BF /* PlankFilza */ = {
 			isa = PBXGroup;
 			children = (
-				88ECD7602527EDA90046CD7A /* time_frame.framework */,
+				8861FC2E25D9F2B4002CABA5 /* postexploit */,
+				8861FC1025D9F29D002CABA5 /* exploit */,
 				88ED0126252BE7F0000A43ED /* PatchDebugging */,
-				88ECD73D2527B2490046CD7A /* tardy0n */,
 				D6DEAD4722DBF20B005948BF /* pwner.h */,
 				D6DEAD4822DBF20B005948BF /* Info.plist */,
 				D6DEAD4F22DBF220005948BF /* mach_vm.h */,
@@ -142,8 +168,6 @@
 				D6DEAD9C22DBF559005948BF /* main.h */,
 				880773CE2526ADCC00CFD45B /* support.m */,
 				880773CF2526ADCC00CFD45B /* support.h */,
-				88ECD74A2527C55C0046CD7A /* Kernel_Base.h */,
-				88ECD74B2527C55C0046CD7A /* Kernel_Base.m */,
 			);
 			path = PlankFilza;
 			sourceTree = "<group>";
@@ -152,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				D6DEAD9D22DBF5FA005948BF /* UIKit.framework */,
-				D6DEAD9222DBF28A005948BF /* IOKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -164,15 +187,18 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88ECD7472527B2490046CD7A /* kmem.h in Headers */,
+				8861FC2925D9F29D002CABA5 /* voucher_utils.h in Headers */,
+				8861FC2825D9F29D002CABA5 /* fake_element_spray.h in Headers */,
+				8861FC2C25D9F29D002CABA5 /* descriptors_utils.h in Headers */,
 				D6DEAD7022DBF224005948BF /* mach_vm.h in Headers */,
+				8861FC2B25D9F29D002CABA5 /* cicuta_virosa.h in Headers */,
+				8861FC2725D9F29D002CABA5 /* cicuta_log.h in Headers */,
 				880773D12526ADCC00CFD45B /* support.h in Headers */,
+				8861FC3125D9F2B4002CABA5 /* rootless.h in Headers */,
 				88ED0136252BE802000A43ED /* fishhook.h in Headers */,
-				88ECD7452527B2490046CD7A /* helpers.h in Headers */,
+				8861FC2325D9F29D002CABA5 /* exploit_utilities.h in Headers */,
 				88ED0138252BE802000A43ED /* BypassAntiDebugging.h in Headers */,
-				88ECD74C2527C55C0046CD7A /* Kernel_Base.h in Headers */,
 				D6DEAD4922DBF20B005948BF /* pwner.h in Headers */,
-				88ECD7492527B2490046CD7A /* tardy0n.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,7 +260,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88ED0137252BE802000A43ED /* LICENSE in Resources */,
+				8861FC2625D9F29D002CABA5 /* README.md in Resources */,
+				8861FC1F25D9F29D002CABA5 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,14 +272,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8861FC2A25D9F29D002CABA5 /* exploit_utilities.c in Sources */,
+				8861FC2525D9F29D002CABA5 /* voucher_utils.c in Sources */,
+				8861FC3225D9F2B4002CABA5 /* rootless.m in Sources */,
+				8861FC2025D9F29D002CABA5 /* cicuta_log.c in Sources */,
+				8861FC2125D9F29D002CABA5 /* fake_element_spray.c in Sources */,
+				8861FC2225D9F29D002CABA5 /* descriptors_utils.c in Sources */,
 				D6DEAD8022DBF224005948BF /* main.m in Sources */,
-				88ECD7462527B2490046CD7A /* kmem.c in Sources */,
-				88ECD7442527B2490046CD7A /* helpers.c in Sources */,
+				8861FC2425D9F29D002CABA5 /* cicuta_virosa.c in Sources */,
 				88ED0135252BE802000A43ED /* fishhook.c in Sources */,
 				88ED0133252BE802000A43ED /* BypassAntiDebugging.m in Sources */,
 				880773D02526ADCC00CFD45B /* support.m in Sources */,
-				88ECD7482527B2490046CD7A /* tardy0n.cc in Sources */,
-				88ECD74D2527C55C0046CD7A /* Kernel_Base.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +341,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -367,7 +397,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -395,6 +425,7 @@
 				);
 				INFOPLIST_FILE = PlankFilza/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -434,6 +465,7 @@
 				);
 				INFOPLIST_FILE = PlankFilza/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
