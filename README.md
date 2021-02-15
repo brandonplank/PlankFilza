@@ -14,8 +14,5 @@ Remount for iOS 13 only coming soon.
 
 ### Credits:
 <ul>
-  <li> CoolStar and tihmstar for the tardy0n tfp0 exploit </li>  
-  <li> Jake James for the Time Waste tfp0 exploit </li>
-  <li> 0x7ff for the Kernel Base finder </li>
   <li> You, the community for making this possible </li>
 </ul>
