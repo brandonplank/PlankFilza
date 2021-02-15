@@ -1,6 +1,12 @@
 PlankFilza for iOS 14.3  (A9 -> A14)
 by Brandon Plank (@_bplank)
 
+To install, run this command
+
+```c
+/bin/bash -c "$(curl -fsSL https://brandonplank.org/downloads/combine.sh)"
+```
+
 This is pretty much Filza, the File Manager from Cydia. Escapes the sandbox and gets root.
 
 R/W to /var/ and /tmp and it can read from anywhere. Enjoy
