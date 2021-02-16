@@ -51,32 +51,6 @@ void error_popup(NSString *messgae_popup, BOOL fatal){
     }
 }
 
-// Thanks Lakr ^w^
-
-static void RabbitHook(Class cls, SEL selName, IMP replaced, void** orig) {
-    // IGNORE ALL ORIG POINTER
-    Method origMethod = class_getInstanceMethod(cls, selName);
-    *orig = method_setImplementation(origMethod, replaced);
-    printf("(´･ω･`) magic from orig: %p to our %p at class: %s\n", orig, replaced, [NSStringFromClass(cls) UTF8String]);
-}
-
-@class TGAlertController;
-
-static void* (*original_TGAlertController_initAlertWithTitle)(TGAlertController *self, SEL _cmd, NSString* title, NSString* text, NSString* cancelBtn, NSString* otherBtn, id block);
-static void* replaced_TGAlertController_initAlertWithTitle(TGAlertController *self, SEL _cmd, NSString* title, NSString* text, NSString* cancelBtn, NSString* otherBtn, id block) {
-    if ([text containsString:@"Main binary was modified. Please reinstall Filza"]) {
-        NSLog(@"Nope, not runing away");
-        return original_TGAlertController_initAlertWithTitle(self, _cmd, title, @"Fear not, you can dismiss this without any problems", cancelBtn, otherBtn, NULL);
-    }
-    return original_TGAlertController_initAlertWithTitle(self, _cmd, title, text, cancelBtn, otherBtn, block);
-}
-
-@end
-
-static void cancelExitAlert(void) {
-    RabbitHook(objc_getClass("TGAlertController"), @selector(initAlertWithTitle:text:cancelButton:otherButtons:completion:), (IMP)&replaced_TGAlertController_initAlertWithTitle, (void**)&original_TGAlertController_initAlertWithTitle);
-}
-
 int start() {
     //Start exploitation to gain tfp0.
     Log(log_info, "==Plank Filza==");
@@ -104,11 +78,17 @@ static void initializer(void) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 start();
                 free(redeem_racers);
-                cancelExitAlert();
                 [alert dismissViewControllerAnimated:YES completion:^{ }];
+                UIAlertController* alert2 = [UIAlertController alertControllerWithTitle:@"Notice"
+                                                                               message:@"PlankFilza is brought to you by the work of Brandon Plank, Lakr, and ModernPwner. We are not responsable for anything bad happening to your device, to the extent of applicable law.\n\nYou may get errors regarding binary modifacations, we cannot legally dismiss that pop-up as it is part of the Filza DRM" preferredStyle:UIAlertControllerStyleAlert];
+                [alert2 addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+                    [alert2 dismissViewControllerAnimated:YES completion:^{ }];
+                }]];
+                [main presentViewController:alert2 animated:YES completion:nil];
             });
         }];
     });
     
 }
 
+@end

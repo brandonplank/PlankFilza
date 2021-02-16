@@ -422,6 +422,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/pwner",
 					"$(PROJECT_DIR)/PlankFilza",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PlankFilza/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -435,6 +436,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/pwner",
+					"$(PROJECT_DIR)",
 				);
 				OTHER_LDFLAGS = (
 					"-w",
@@ -462,6 +464,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/pwner",
 					"$(PROJECT_DIR)/PlankFilza",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PlankFilza/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -475,6 +478,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/pwner",
+					"$(PROJECT_DIR)",
 				);
 				OTHER_LDFLAGS = (
 					"-w",
