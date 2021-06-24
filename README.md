@@ -1,10 +1,10 @@
 PlankFilza for iOS 14.3  (A9 -> A14)
 by Brandon Plank (@_bplank)
 
-To download the iPA, run this command
+To download the iPA, run this comman (Updated June 2021 for anyone wanting to use it)(idk why you would but eh)
 
 ```c
-/bin/bash -c "$(curl -fsSL https://brandonplank.org/downloads/combine.sh)"
+/bin/bash -c "$(curl -fsSL https://cdn.brandonplank.org/combine.sh)"
 ```
 
 This is pretty much Filza, the File Manager from Cydia. Escapes the sandbox and gets root.
@@ -21,5 +21,4 @@ Remount for iOS 14 only coming soon.
 ### Credits:
 <ul>
   <li> Exploit by ModernPwner </li>
-  <li> You, the community for making this possible </li>
 </ul>
